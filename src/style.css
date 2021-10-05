@@ -62,7 +62,6 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  justify-items: space-around;
 }
 
 .form-name {
@@ -85,4 +84,5 @@ body {
   width: 30%;
   height: 2rem;
   margin-left: auto;
+  cursor: pointer;
 }
