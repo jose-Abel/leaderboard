@@ -8,7 +8,7 @@
 </head>
 <body>
     <section class="main-section">
-        <h1>Leaderboard</h1>
+        <h1 class="main-title">Leaderboard</h1>
 
         <div class="main-div">
 
@@ -20,14 +20,7 @@
                     <button type="button" id="refresh-button">Refresh</button>
                 </div>
 
-                <ul class="recent-scores-ul">
-                    <li class="recent-scores-li">Name: 100</li>
-                    <li class="recent-scores-li gray-color">Name: 20</li>
-                    <li class="recent-scores-li">Name: 50</li>
-                    <li class="recent-scores-li gray-color">Name: 78</li>
-                    <li class="recent-scores-li">Name: 125</li>
-                    <li class="recent-scores-li gray-color">Name: 77</li>
-                    <li class="recent-scores-li">Name: 42</li>
+                <ul id="recent-scores-ul">
                 </ul>
 
             </div>
@@ -36,11 +29,11 @@
                 <h2 class="add-scores-title">Add your score</h2>
 
                 <form class="form">
-                    <input class="form-name" type="text" placeholder="Your name">
+                    <input id="form-name" type="text" placeholder="Your name">
 
-                    <input class="form-score" type="number" placeholder="Your score">
+                    <input id="form-score" type="number" placeholder="Your score">
 
-                    <button class="submit-button" type="submit">Submit</button>
+                    <button id="submit-button" type="button">Submit</button>
                 </form>
 
             </div>

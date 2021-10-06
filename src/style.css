@@ -12,6 +12,10 @@ body {
   margin: 2rem 4rem;
 }
 
+.main-title {
+  font-size: 3rem;
+}
+
 .main-div {
   display: flex;
   margin-top: 2rem;
@@ -33,7 +37,7 @@ body {
   cursor: pointer;
 }
 
-.recent-scores-ul {
+#recent-scores-ul {
   border: 1px solid black;
 }
 
@@ -64,7 +68,7 @@ body {
   flex-direction: column;
 }
 
-.form-name {
+#form-name {
   margin-bottom: 1rem;
   width: 20rem;
   height: 3rem;
@@ -72,7 +76,7 @@ body {
   font-size: 1rem;
 }
 
-.form-score {
+#form-score {
   margin-bottom: 1rem;
   width: 20rem;
   height: 3rem;
@@ -80,7 +84,7 @@ body {
   font-size: 1rem;
 }
 
-.submit-button {
+#submit-button {
   width: 30%;
   height: 2rem;
   margin-left: auto;
