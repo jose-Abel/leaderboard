@@ -37,7 +37,7 @@ body {
   cursor: pointer;
 }
 
-.recent-scores-ul {
+#recent-scores-ul {
   border: 1px solid black;
 }
 
@@ -68,7 +68,7 @@ body {
   flex-direction: column;
 }
 
-.form-name {
+#form-name {
   margin-bottom: 1rem;
   width: 20rem;
   height: 3rem;
@@ -76,7 +76,7 @@ body {
   font-size: 1rem;
 }
 
-.form-score {
+#form-score {
   margin-bottom: 1rem;
   width: 20rem;
   height: 3rem;
