@@ -1,34 +1,42 @@
 import './style.css';
 
-const gameID = 'Qh5qvu9aTOutMmVnTpfJ';
+const gameID = 'plCBmErkBwJG8kN6iM4F';
 const URL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores`;
 
-const ulElement = document.getElementById('recent-scores-ul');
 const refreshButton = document.getElementById('refresh-button');
 const nameInput = document.getElementById('form-name');
 const scoreInput = document.getElementById('form-score');
 const submitButton = document.getElementById('submit-button');
+const table = document.querySelector('.table');
+const tdBody = document.querySelector('.table-body');
+const thName = document.querySelector('.thName');
+const thScore = document.querySelector('.thScore');
 
 const transformData = (data) => {
-  ulElement.innerHTML = '';
+  tdBody.innerHTML = '';
+
+  if (data.length) {
+    table.classList.remove('hide');
+    thName.classList.remove('hide');
+    thScore.classList.remove('hide');
+  }
 
   data.forEach((result) => {
     const { user, score } = result;
 
-    const liElement = document.createElement('li');
-    const spanNameElement = document.createElement('span');
-    const spanScoreElement = document.createElement('span');
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    const tdScore = document.createElement('td');
 
-    liElement.classList.add('recent-scores-li');
-    spanNameElement.classList.add('name');
-    spanScoreElement.classList.add('score');
+    tdName.scope = 'row';
+    tdScore.scope = 'row';
 
-    spanNameElement.innerHTML = `${user}: `;
-    spanScoreElement.innerHTML = score;
+    tdName.innerHTML = user;
+    tdScore.innerHTML = score;
 
-    liElement.appendChild(spanNameElement);
-    liElement.appendChild(spanScoreElement);
-    ulElement.appendChild(liElement);
+    tdBody.appendChild(tr);
+    tr.appendChild(tdName);
+    tr.appendChild(tdScore);
   });
 };
 

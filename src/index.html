@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <title>Leaderboard</title>
 </head>
 <body>
@@ -17,11 +18,20 @@
                 <div class="recent-scores--title">
                     <h2>Recent scores</h2> 
                     
-                    <button type="button" id="refresh-button">Refresh</button>
+                    <button type="button" id="refresh-button" class="btn btn-success">Refresh</button>
                 </div>
 
-                <ul id="recent-scores-ul">
-                </ul>
+                <table class="table hide">
+                    <thead>
+                      <tr>
+                        <th class="thName hide" scope="col">Name</th>
+                        <th class="thScore hide" scope="col">Score</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-body">
+
+                    </tbody>
+                  </table>
 
             </div>
 
@@ -29,11 +39,15 @@
                 <h2 class="add-scores-title">Add your score</h2>
 
                 <form class="form">
-                    <input id="form-name" type="text" placeholder="Your name">
+                    <input 
+                    class="form-control"
+                    id="form-name" type="text" placeholder="Your name">
 
-                    <input id="form-score" type="number" placeholder="Your score">
+                    <input 
+                    class="form-control"
+                    id="form-score" type="number" placeholder="Your score">
 
-                    <button id="submit-button" type="button">Submit</button>
+                    <button id="submit-button" type="button" class="btn btn-warning">Submit</button>
                 </form>
 
             </div>
