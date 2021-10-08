@@ -13,7 +13,7 @@ body {
 }
 
 .main-title {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .main-div {
@@ -37,21 +37,13 @@ body {
   cursor: pointer;
 }
 
-#recent-scores-ul {
-  border: 1px solid black;
+.hide {
+  display: none;
+  visibility: hidden;
 }
 
-.recent-scores-li {
-  list-style: none;
-  padding: 1rem;
-}
-
-.recent-scores-li:not(:last-child) {
-  border-bottom: 1px solid black;
-}
-
-.gray-color {
-  background-color: rgba(128, 128, 128, 0.63);
+table {
+  color: white;
 }
 
 .add-scores {
@@ -61,6 +53,7 @@ body {
 
 .add-scores-title {
   margin-bottom: 2rem;
+  color: black;
 }
 
 .form {

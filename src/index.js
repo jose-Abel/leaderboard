@@ -1,34 +1,46 @@
 import './style.css';
 
-const gameID = 'Qh5qvu9aTOutMmVnTpfJ';
+const gameID = 'Yh3onJ6fWOU1oA2rqAy5';
 const URL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores`;
 
-const ulElement = document.getElementById('recent-scores-ul');
 const refreshButton = document.getElementById('refresh-button');
 const nameInput = document.getElementById('form-name');
 const scoreInput = document.getElementById('form-score');
 const submitButton = document.getElementById('submit-button');
+const table = document.querySelector('.table');
+const tdBody = document.querySelector('.table-body');
+const thName = document.querySelector('.thName');
+const thScore = document.querySelector('.thScore');
 
 const transformData = (data) => {
-  ulElement.innerHTML = '';
+  tdBody.innerHTML = '';
+
+  if (data.length) {
+    table.classList.remove('hide');
+    thName.classList.remove('hide');
+    thScore.classList.remove('hide');
+  }
 
   data.forEach((result) => {
     const { user, score } = result;
 
-    const liElement = document.createElement('li');
-    const spanNameElement = document.createElement('span');
-    const spanScoreElement = document.createElement('span');
+    if (+user) {
+      return;
+    }
 
-    liElement.classList.add('recent-scores-li');
-    spanNameElement.classList.add('name');
-    spanScoreElement.classList.add('score');
+    const tr = document.createElement('tr');
+    const tdName = document.createElement('td');
+    const tdScore = document.createElement('td');
 
-    spanNameElement.innerHTML = `${user}: `;
-    spanScoreElement.innerHTML = score;
+    tdName.scope = 'row';
+    tdScore.scope = 'row';
 
-    liElement.appendChild(spanNameElement);
-    liElement.appendChild(spanScoreElement);
-    ulElement.appendChild(liElement);
+    tdName.innerHTML = user;
+    tdScore.innerHTML = score;
+
+    tdBody.appendChild(tr);
+    tr.appendChild(tdName);
+    tr.appendChild(tdScore);
   });
 };
 
@@ -47,7 +59,7 @@ const handleGetGames = async () => {
 };
 
 const handlePostScores = async () => {
-  if (nameInput.value && scoreInput.value) {
+  if (nameInput.value && scoreInput.value && !+nameInput.value) {
     try {
       await fetch(URL, {
         method: 'POST',
