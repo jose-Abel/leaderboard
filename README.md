@@ -4,7 +4,7 @@
 
 Leaderboard project where I've built a basic frontend with HTML, CSS and JavaScript to consume the API https://us-central1-js-capstone-backend.cloudfunctions.net/api/ where I first create a game through Postman and after create a basic UI that with asynchronous code sends a POST request through the submit button of the "Add your score" form, and sends a GET request through the "refresh" button in the recent scores table.
 
-<!-- ![screenshot](./app_screenshot.png) -->
+![screenshot](./app_screenshot.png)
 
 ## Built With
 
