@@ -1,6 +1,6 @@
 import './style.css';
 
-const gameID = 'plCBmErkBwJG8kN6iM4F';
+const gameID = 'Yh3onJ6fWOU1oA2rqAy5';
 const URL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameID}/scores`;
 
 const refreshButton = document.getElementById('refresh-button');
@@ -23,6 +23,10 @@ const transformData = (data) => {
 
   data.forEach((result) => {
     const { user, score } = result;
+
+    if (+user) {
+      return;
+    }
 
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
@@ -55,7 +59,7 @@ const handleGetGames = async () => {
 };
 
 const handlePostScores = async () => {
-  if (nameInput.value && scoreInput.value) {
+  if (nameInput.value && scoreInput.value && !+nameInput.value) {
     try {
       await fetch(URL, {
         method: 'POST',
